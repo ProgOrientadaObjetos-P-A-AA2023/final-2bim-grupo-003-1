@@ -22,40 +22,20 @@ public class PlanPostPagoMinutosMegas extends PlanCelular {
         costoGigas = costoGiga;
     }
 
-    public Propietario obtenerPropietario() {
-        return propietario;
-    }
-
     public void establecerPropietario(Propietario c) {
         propietario = c;
-    }
-
-    public double obtenerMinutosSaldo() {
-        return minutosSaldo;
     }
 
     public void establecerMinutosSaldo(double c) {
         minutosSaldo = c;
     }
 
-    public double obtenerCostoMinutosSaldo() {
-        return costoMinutosSaldo;
-    }
-
     public void establecerCostoMinutosSaldo(double c) {
         costoMinutosSaldo = c;
     }
 
-    public double obtenerGigasInternet() {
-        return gigasInternet;
-    }
-
     public void establecerGigasInternet(double c) {
         gigasInternet = c;
-    }
-
-    public double obtenerCostoGiga() {
-        return costoGigas;
     }
 
     public void establecerCostoGiga(double c) {
@@ -65,6 +45,26 @@ public class PlanPostPagoMinutosMegas extends PlanCelular {
     @Override
     public void calcularPagoMensual() {
         pagoMensual = (minutosSaldo * costoMinutosSaldo) + (gigasInternet * costoGigas);
+    }
+
+    public Propietario obtenerPropietario() {
+        return propietario;
+    }
+
+    public double obtenerMinutosSaldo() {
+        return minutosSaldo;
+    }
+
+    public double obtenerCostoMinutosSaldo() {
+        return costoMinutosSaldo;
+    }
+
+    public double obtenerGigasInternet() {
+        return gigasInternet;
+    }
+
+    public double obtenerCostoGiga() {
+        return costoGigas;
     }
 
     @Override

@@ -26,48 +26,24 @@ public class PlanPostPagoMinutosMegasEconomico extends PlanCelular {
         porcentDesc = porcent;
     }
 
-    public Propietario obtenerPropietario() {
-        return propietario;
-    }
-
     public void establecerPropietario(Propietario c) {
         propietario = c;
-    }
-
-    public double obtenerMinutosSaldo() {
-        return minutos;
     }
 
     public void establecerMinutosSaldo(double n) {
         minutos = n;
     }
 
-    public double obtenerCostoMinutosSaldo() {
-        return costoMinutos;
-    }
-
     public void establecerCostoMinutosSaldo(double n) {
         costoMinutos = n;
-    }
-
-    public double obtenerGigasInternet() {
-        return megasGigas;
     }
 
     public void establecerGigasInternet(double n) {
         megasGigas = n;
     }
 
-    public double obtenerCostoGiga() {
-        return costoGiga;
-    }
-
     public void establecerCostoGiga(double n) {
         costoGiga = n;
-    }
-
-    public double obtenerPorcentajeDescuento() {
-        return porcentDesc;
     }
 
     public void establecerPorcentajeDescuento(double n) {
@@ -79,6 +55,30 @@ public class PlanPostPagoMinutosMegasEconomico extends PlanCelular {
         pagoMensual = (minutos * costoMinutos) + (megasGigas * costoGiga)
                 - (((minutos * costoMinutos) + (megasGigas * costoGiga))
                 * (porcentDesc / 100));
+    }
+
+    public Propietario obtenerPropietario() {
+        return propietario;
+    }
+
+    public double obtenerMinutosSaldo() {
+        return minutos;
+    }
+
+    public double obtenerCostoMinutosSaldo() {
+        return costoMinutos;
+    }
+
+    public double obtenerGigasInternet() {
+        return megasGigas;
+    }
+
+    public double obtenerCostoGiga() {
+        return costoGiga;
+    }
+
+    public double obtenerPorcentajeDescuento() {
+        return porcentDesc;
     }
 
     @Override

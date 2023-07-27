@@ -24,40 +24,20 @@ public class PlanPostPagoMinutos extends PlanCelular {
 
     }
 
-    public Propietario obtenerPropietario() {
-        return propietario;
-    }
-
     public void establecerPropietario(Propietario c) {
         propietario = c;
-    }
-    
-    public double obtenerMinutosNacionales() {
-        return minutosNacionales;
     }
 
     public void establecerMinutosNacionales(double c) {
         minutosNacionales = c;
     }
 
-    public double obtenerCostoMinutoNacional() {
-        return costoMinutoNacional;
-    }
-
     public void establecerCostoMinutoNacional(double c) {
         costoMinutoNacional = c;
     }
 
-    public double obtenerMinutosInternacionales() {
-        return minutosInternacionales;
-    }
-
     public void establecerMinutosInternacionales(double c) {
         minutosInternacionales = c;
-    }
-
-    public double obtenerCostoMinutoInternacional() {
-        return costoMinutoInternacionales;
     }
 
     public void establecerCostoMinutoInternacional(double c) {
@@ -68,6 +48,26 @@ public class PlanPostPagoMinutos extends PlanCelular {
     public void calcularPagoMensual() {
         pagoMensual = (minutosNacionales * costoMinutoNacional)
                 + (minutosInternacionales * costoMinutoInternacionales);
+    }
+
+    public Propietario obtenerPropietario() {
+        return propietario;
+    }
+
+    public double obtenerMinutosNacionales() {
+        return minutosNacionales;
+    }
+
+    public double obtenerCostoMinutoNacional() {
+        return costoMinutoNacional;
+    }
+
+    public double obtenerMinutosInternacionales() {
+        return minutosInternacionales;
+    }
+
+    public double obtenerCostoMinutoInternacional() {
+        return costoMinutoInternacionales;
     }
 
     @Override
