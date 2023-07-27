@@ -26,18 +26,18 @@ public class PlanServicios {
         int op = 1, op2;
         String nombre, apellido, pasaporte, barrio, ciudad, marca, modelo, numeroCelular;
         do {
-            System.out.printf("-------------------------------------------\n"
-                    + "Ingresar PLAN CELULAR                   [1]\n"
-                    + "Mostrar tipos de planes                 [2]\n"
-                    + "Salir                                   [0]\n"
-                    + "-------------------------------------------\n");
+            System.out.printf("--------------------------------------------------+\n"
+                            + "|1] Ingresar PLAN CELULAR                         |\n"
+                            + "|2] Mostrar tipos de planes                       |\n"
+                            + "|0] Salir                                         |\n"
+                            + "--------------------------------------------------+\n");
             op = sc.nextInt();
 
-            System.out.println("-------------------------------------------");
+            System.out.println("--------------------------------------------------");
             if (op == 1) {
                 do {
 
-                    op2 = menu();
+                    op2 = interfaz1();
                     sc.nextLine();
                     System.out.println("DATOS - PROPIETARIO");
                     System.out.print("\tIngrese el nombre: ");
@@ -52,18 +52,18 @@ public class PlanServicios {
                     barrio = sc.nextLine();
                     System.out.print("\tIngrese la marca del celular: ");
                     marca = sc.next();
-                    
+
                     sc.nextLine();
-                    
+
                     System.out.print("\tIngrese el modelo del celular: ");
                     modelo = sc.nextLine();
-   
+
                     System.out.print("\tIngrese el número del celular: ");
                     numeroCelular = sc.nextLine();
-                    
-                    Propietario p = new Propietario(nombre, apellido, 
+
+                    Propietario p = new Propietario(nombre, apellido,
                             pasaporte, ciudad,
-                            barrio, marca, 
+                            barrio, marca,
                             modelo, numeroCelular);
 
                     switch (op2) {
@@ -79,6 +79,7 @@ public class PlanServicios {
                             double costoGiga3 = sc.nextDouble();
                             System.out.print("Ingrese el porcentaje de descuento: ");
                             double porcentaje = sc.nextDouble();
+
                             PlanPostPagoMinutosMegasEconomico pppmme = new PlanPostPagoMinutosMegasEconomico(
                                     p,
                                     minutosSaldo2, costoMinutoSaldo2,
@@ -114,14 +115,14 @@ public class PlanServicios {
                             System.out.print("Ingrese el valor de la tarifa base: ");
                             double tarifaBase = sc.nextDouble();
                             PlanPostPagoMegas pppg = new PlanPostPagoMegas(
-                                    p,gigaInternet,
+                                    p, gigaInternet,
                                     costoGiga, tarifaBase);
 
                             c.insertarPlanPostPagoMegas(pppg);
                             break;
 
                         case 4:
-                            System.out.print("Ingrese numero de minuto de de saldo: ");
+                            System.out.print("Ingrese el numero de minuto de de saldo: ");
                             double minutosSaldo = sc.nextDouble();
                             System.out.print("Ingrese el costo de minuto de saldo: ");
                             double costoMinutoSaldo = sc.nextDouble();
@@ -141,17 +142,19 @@ public class PlanServicios {
                             break;
                     }
 
-                    System.out.printf("-------------------------------------------\n"
+                    System.out.printf("--------------------------------------------------\n"
                             + "¿Desea agregar otro plan?\n"
-                            + "\tSi     [1]\n"
-                            + "\tNo     [0]\n"
-                            + "-------------------------------------------\n");
+                            + "|1]    Si     \n"
+                            + "|0]    No     \n"
+                            + "--------------------------------------------------\n");
                     op2 = sc.nextInt();
-                    System.out.println("-------------------------------------------");
+                    System.out.println("--------------------------------------------------");
+                    
                 } while (op2 != 0);
+                
             }
             if (op == 2) {
-                int op3 = menu2();
+                int op3 = interfaz2();
                 switch (op3) {
                     case 1:
                         for (int i = 0; i < c.obtenerDataPlanPostPagoMinutosMegasEconomico().size(); i++) {
@@ -192,36 +195,41 @@ public class PlanServicios {
                         break;
                 }
             }
+            
+            if (op == 0){
+                System.out.println("SALIENDO...");
+            }
+            
         } while (op != 0);
     }
 
-    public static int menu() {
+    public static int interfaz1() {
         Scanner sc = new Scanner(System.in);
         System.out.printf("SELECIONE EL TIPO DE PLAN QUE DESEE INGRESAR\n"
-                + "--------------------------------------------\n"
-                + "Plan post pago minutos megas economico    [1]\n"
-                + "Plan post pago minutos                    [2]\n"
-                + "Plan post pago megas                      [3]\n"
-                + "Plan post pago minutos megas              [4]\n"
-                + "--------------------------------------------\n");
+                + "--------------------------------------------------+\n"
+                + "|1] Plan post pago minutos megas economico        |\n"
+                + "|2] Plan post pago minutos                        |\n"
+                + "|3] Plan post pago megas                          |\n"
+                + "|4] Plan post pago minutos megas                  |\n"
+                + "--------------------------------------------------+\n");
         int op = sc.nextInt();
-        System.out.println("-------------------------------------------");
+        System.out.println("--------------------------------------------------");
         return op;
     }
 
-    public static int menu2() {
+    public static int interfaz2() {
         Scanner sc = new Scanner(System.in);
 
         System.out.printf("SELECIONE EL TIPO DE PLAN que desee visualizar\n"
-                + "--------------------------------------------\n"
-                + "Plan post pago minutos megas economico    [1]\n"
-                + "Plan post pago minutos                    [2]\n"
-                + "Plan post pago megas                      [3]\n"
-                + "Plan post pago minutos megas              [4]\n"
-                + "TODOS                                     [5]\n"
-                + "--------------------------------------------\n");
+                        + "--------------------------------------------------+\n"
+                        + "|1] Plan post pago minutos megas economico        |\n"
+                        + "|2] Plan post pago minutos                        |\n"
+                        + "|3]Plan post pago megas                           |\n"
+                        + "|4]Plan post pago minutos megas                   |\n"
+                        + "|5]TODOS                                          |\n"
+                        + "--------------------------------------------------+\n");
         int op = sc.nextInt();
-        System.out.println("-------------------------------------------");
+        System.out.println("--------------------------------------------------");
         return op;
     }
 }
