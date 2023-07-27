@@ -7,6 +7,7 @@ import paquete3.PlanPostPagoMegas;
 import paquete3.PlanPostPagoMinutos;
 import paquete3.PlanPostPagoMinutosMegas;
 import paquete3.PlanPostPagoMinutosMegasEconomico;
+import paquete3.Propietario;
 
 /**
  *
@@ -59,6 +60,11 @@ public class PlanServicios {
    
                     System.out.print("\tIngrese el número del celular: ");
                     numeroCelular = sc.nextLine();
+                    
+                    Propietario p = new Propietario(nombre, apellido, 
+                            pasaporte, ciudad,
+                            barrio, marca, 
+                            modelo, numeroCelular);
 
                     switch (op2) {
 
@@ -74,10 +80,7 @@ public class PlanServicios {
                             System.out.print("Ingrese el porcentaje de descuento: ");
                             double porcentaje = sc.nextDouble();
                             PlanPostPagoMinutosMegasEconomico pppmme = new PlanPostPagoMinutosMegasEconomico(
-                                    nombre, apellido,
-                                    pasaporte, ciudad,
-                                    barrio, marca,
-                                    modelo, numeroCelular,
+                                    p,
                                     minutosSaldo2, costoMinutoSaldo2,
                                     gigaInternet3, costoGiga3,
                                     porcentaje);
@@ -95,10 +98,8 @@ public class PlanServicios {
                             System.out.print("Ingrese el costo de minuto Internacional: ");
                             double costoMinutoInternacional = sc.nextDouble();
 
-                            PlanPostPagoMinutos pppm = new PlanPostPagoMinutos(nombre, apellido,
-                                    pasaporte, ciudad,
-                                    barrio, marca,
-                                    modelo, numeroCelular,
+                            PlanPostPagoMinutos pppm = new PlanPostPagoMinutos(
+                                    p,
                                     minutosNacionales, costoMinutoNacional,
                                     minutosInternacionales, costoMinutoInternacional);
 
@@ -112,11 +113,8 @@ public class PlanServicios {
                             double costoGiga = sc.nextDouble();
                             System.out.print("Ingrese el valor de la tarifa base: ");
                             double tarifaBase = sc.nextDouble();
-                            PlanPostPagoMegas pppg = new PlanPostPagoMegas(nombre,
-                                    apellido, pasaporte,
-                                    barrio, ciudad,
-                                    marca, modelo,
-                                    numeroCelular, gigaInternet,
+                            PlanPostPagoMegas pppg = new PlanPostPagoMegas(
+                                    p,gigaInternet,
                                     costoGiga, tarifaBase);
 
                             c.insertarPlanPostPagoMegas(pppg);
@@ -132,10 +130,7 @@ public class PlanServicios {
                             System.out.print("Ingrese el costo de la giga de internet: ");
                             double costoGiga2 = sc.nextDouble();
                             PlanPostPagoMinutosMegas ppmg = new PlanPostPagoMinutosMegas(
-                                    nombre, apellido,
-                                    pasaporte, ciudad,
-                                    barrio, marca,
-                                    modelo, numeroCelular,
+                                    p,
                                     minutosSaldo, costoMinutoSaldo,
                                     gigaInternet2, costoGiga2);
 

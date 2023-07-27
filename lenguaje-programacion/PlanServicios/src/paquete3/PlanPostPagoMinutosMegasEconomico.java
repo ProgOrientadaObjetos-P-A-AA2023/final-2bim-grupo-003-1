@@ -6,30 +6,32 @@ package paquete3;
 
 public class PlanPostPagoMinutosMegasEconomico extends PlanCelular {
 
+    private Propietario propietario;
     private double minutos;
     private double costoMinutos;
     private double megasGigas;
     private double costoGiga;
     private double porcentDesc;
 
-    public PlanPostPagoMinutosMegasEconomico(String nombreP,
-            String apellidoP, String pasaporteP,
-            String ciudadP, String barrioP,
-            String marcaCelular, String modeloCelular,
-            String numeroCelular,
+    public PlanPostPagoMinutosMegasEconomico(Propietario p,
             double minutosS, double costoMin,
             double gigasInternet, double costG,
             double porcent) {
 
-        super(nombreP, apellidoP, pasaporteP,
-                ciudadP, barrioP, marcaCelular,
-                modeloCelular, numeroCelular);
-
+        propietario = p;
         minutos = minutosS;
         costoMinutos = costoMin;
         megasGigas = gigasInternet;
         costoGiga = costG;
         porcentDesc = porcent;
+    }
+
+    public Propietario obtenerPropietario() {
+        return propietario;
+    }
+
+    public void establecerPropietario(Propietario c) {
+        propietario = c;
     }
 
     public double obtenerMinutosSaldo() {
@@ -81,14 +83,13 @@ public class PlanPostPagoMinutosMegasEconomico extends PlanCelular {
 
     @Override
     public String toString() {
-        String reporte = String.format("PLAN POST PAGO MINUTOS MEGAS ECONOMICO\n%s"
+        String reporte = String.format("PLAN POST PAGO MINUTOS MEGAS ECONOMICO\n"
                 + "Minutos de saldo: %.2f\n"
                 + "Costo por minuto: %.2f\n"
                 + "Gigas de internet: %.2f\n"
                 + "Costo por giga: %.2f\n"
                 + "Porcentaje de descuento %.2f\n"
                 + "Pago mensual: %.2f\n",
-                super.toString(),
                 minutos,
                 costoMinutos,
                 megasGigas,

@@ -6,22 +6,17 @@ package paquete3;
 
 public class PlanPostPagoMinutos extends PlanCelular {
 
+    private Propietario propietario;
     private double minutosNacionales;
     private double costoMinutoNacional;
     private double minutosInternacionales;
     private double costoMinutoInternacionales;
 
-    public PlanPostPagoMinutos(
-            String nombrePropietario, String apellidoPropietario,
-            String pasaportePropietario, String ciudadPropietario,
-            String barrioPropietario, String marcaCelular,
-            String modeloCelular, String numeroCelular,
+    public PlanPostPagoMinutos(Propietario p,
             double minNacionales, double costoMinNacional,
             double minInternacional, double costoMinInternacional) {
 
-        super(nombrePropietario, apellidoPropietario, pasaportePropietario,
-                ciudadPropietario, barrioPropietario, marcaCelular,
-                modeloCelular, numeroCelular);
+        propietario = p;
         minutosNacionales = minNacionales;
         costoMinutoNacional = costoMinNacional;
         minutosInternacionales = minInternacional;
@@ -29,6 +24,14 @@ public class PlanPostPagoMinutos extends PlanCelular {
 
     }
 
+    public Propietario obtenerPropietario() {
+        return propietario;
+    }
+
+    public void establecerPropietario(Propietario c) {
+        propietario = c;
+    }
+    
     public double obtenerMinutosNacionales() {
         return minutosNacionales;
     }

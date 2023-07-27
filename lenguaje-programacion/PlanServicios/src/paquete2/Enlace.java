@@ -15,6 +15,7 @@ import paquete3.PlanPostPagoMegas;
 import paquete3.PlanPostPagoMinutos;
 import paquete3.PlanPostPagoMinutosMegas;
 import paquete3.PlanPostPagoMinutosMegasEconomico;
+import paquete3.Propietario;
 
 public class Enlace {
 
@@ -52,14 +53,14 @@ public class Enlace {
                     + "ciudadPropietario,barrioPropietario,marcaCelular,modeloCelular,numeroCelular,minutos,"
                     + "costoMinutos,gigasInternet, costoGigas, porcentajeDescuento) values "
                     + "('%s', '%s', '%s', '%s','%s', '%s', '%s', '%s', '%.2f', '%.2f', '%.2f', '%.2f', '%.2f')",
-                    p.obtenerNombrePropietario(),
-                    p.obtenerApellidoPropietario(),
-                    p.obtenerPasaportePropietario(),
-                    p.obtenerCiudadPropietario(),
-                    p.obtenerBarrioPropietario(),
-                    p.obtenerMarcaCelular(),
-                    p.obtenerModeloCelular(),
-                    p.obtenerNumeroCelular(),
+                    p.obtenerPropietario().obtenerNombrePropietario(),
+                    p.obtenerPropietario().obtenerApellidoPropietario(),
+                    p.obtenerPropietario().obtenerPasaportePropietario(),
+                    p.obtenerPropietario().obtenerCiudadPropietario(),
+                    p.obtenerPropietario().obtenerBarrioPropietario(),
+                    p.obtenerPropietario().obtenerMarcaCelular(),
+                    p.obtenerPropietario().obtenerModeloCelular(),
+                    p.obtenerPropietario().obtenerNumeroCelular(),
                     p.obtenerMinutosSaldo(),
                     p.obtenerCostoMinutosSaldo(),
                     p.obtenerGigasInternet(),
@@ -88,14 +89,14 @@ public class Enlace {
                     + "ciudadPropietario,barrioPropietario,marcaCelular,modeloCelular,numeroCelular,minutosNacionales,"
                     + "costoMinutosNacionales, minutosInternacional, costoMinutosInternacional) values "
                     + "('%s', '%s', '%s', '%s','%s', '%s', '%s', '%s', '%.2f', '%.2f', '%.2f', '%.2f')",
-                    p.obtenerNombrePropietario(),
-                    p.obtenerApellidoPropietario(),
-                    p.obtenerPasaportePropietario(),
-                    p.obtenerCiudadPropietario(),
-                    p.obtenerBarrioPropietario(),
-                    p.obtenerMarcaCelular(),
-                    p.obtenerModeloCelular(),
-                    p.obtenerNumeroCelular(),
+                    p.obtenerPropietario().obtenerNombrePropietario(),
+                    p.obtenerPropietario().obtenerApellidoPropietario(),
+                    p.obtenerPropietario().obtenerPasaportePropietario(),
+                    p.obtenerPropietario().obtenerCiudadPropietario(),
+                    p.obtenerPropietario().obtenerBarrioPropietario(),
+                    p.obtenerPropietario().obtenerMarcaCelular(),
+                    p.obtenerPropietario().obtenerModeloCelular(),
+                    p.obtenerPropietario().obtenerNumeroCelular(),
                     p.obtenerMinutosNacionales(),
                     p.obtenerCostoMinutoNacional(),
                     p.obtenerMinutosInternacionales(),
@@ -123,14 +124,14 @@ public class Enlace {
                     + "ciudadPropietario,barrioPropietario,marcaCelular,modeloCelular,numeroCelular, gigasInternet,"
                     + "costoGigasInternet, tarifaBase) values "
                     + "('%s', '%s', '%s', '%s','%s', '%s', '%s', '%s', '%.2f', '%.2f', '%.2f')",
-                    p.obtenerNombrePropietario(),
-                    p.obtenerApellidoPropietario(),
-                    p.obtenerPasaportePropietario(),
-                    p.obtenerCiudadPropietario(),
-                    p.obtenerBarrioPropietario(),
-                    p.obtenerMarcaCelular(),
-                    p.obtenerModeloCelular(),
-                    p.obtenerNumeroCelular(),
+                    p.obtenerPropietario().obtenerNombrePropietario(),
+                    p.obtenerPropietario().obtenerApellidoPropietario(),
+                    p.obtenerPropietario().obtenerPasaportePropietario(),
+                    p.obtenerPropietario().obtenerCiudadPropietario(),
+                    p.obtenerPropietario().obtenerBarrioPropietario(),
+                    p.obtenerPropietario().obtenerMarcaCelular(),
+                    p.obtenerPropietario().obtenerModeloCelular(),
+                    p.obtenerPropietario().obtenerNumeroCelular(),
                     p.obtenerGigasInternet(),
                     p.obtenerCostoGigasInternet(),
                     p.obtenerTarifaBase());
@@ -157,14 +158,14 @@ public class Enlace {
                     + "ciudadPropietario,barrioPropietario,marcaCelular,modeloCelular,numeroCelular,minutosSaldo,"
                     + "costoMinutosSaldo,gigasInternet, costoGigas) values "
                     + "('%s', '%s', '%s', '%s','%s', '%s', '%s', '%s', '%.2f', '%.2f', '%.2f', '%.2f')",
-                    p.obtenerNombrePropietario(),
-                    p.obtenerApellidoPropietario(),
-                    p.obtenerPasaportePropietario(),
-                    p.obtenerCiudadPropietario(),
-                    p.obtenerBarrioPropietario(),
-                    p.obtenerMarcaCelular(),
-                    p.obtenerModeloCelular(),
-                    p.obtenerNumeroCelular(),
+                    p.obtenerPropietario().obtenerNombrePropietario(),
+                    p.obtenerPropietario().obtenerApellidoPropietario(),
+                    p.obtenerPropietario().obtenerPasaportePropietario(),
+                    p.obtenerPropietario().obtenerCiudadPropietario(),
+                    p.obtenerPropietario().obtenerBarrioPropietario(),
+                    p.obtenerPropietario().obtenerMarcaCelular(),
+                    p.obtenerPropietario().obtenerModeloCelular(),
+                    p.obtenerPropietario().obtenerNumeroCelular(),
                     p.obtenerMinutosSaldo(),
                     p.obtenerCostoMinutosSaldo(),
                     p.obtenerGigasInternet(),
@@ -193,15 +194,18 @@ public class Enlace {
 
             ResultSet rs = statement.executeQuery(data);
             while (rs.next()) {
-                PlanPostPagoMinutosMegasEconomico pm3 = new PlanPostPagoMinutosMegasEconomico(
-                        rs.getString("nombrePropietario"),
+                
+                Propietario p = new Propietario(rs.getString("nombrePropietario"),
                         rs.getString("apellidoPropietario"),
                         rs.getString("pasaportePropietario"),
                         rs.getString("ciudadPropietario"),
                         rs.getString("barrioPropietario"),
                         rs.getString("marcaCelular"),
                         rs.getString("modeloCelular"),
-                        rs.getString("numeroCelular"),
+                        rs.getString("numeroCelular"));
+                
+                PlanPostPagoMinutosMegasEconomico pm3 = new PlanPostPagoMinutosMegasEconomico(
+                        p,
                         rs.getDouble("minutos"),
                         rs.getDouble("costoMinutos"),
                         rs.getDouble("gigasInternet"),
@@ -234,15 +238,18 @@ public class Enlace {
 
             ResultSet rs = statement.executeQuery(data);
             while (rs.next()) {
-                PlanPostPagoMinutos pm3 = new PlanPostPagoMinutos(
-                        rs.getString("nombrePropietario"),
+                
+                Propietario p = new Propietario(rs.getString("nombrePropietario"),
                         rs.getString("apellidoPropietario"),
                         rs.getString("pasaportePropietario"),
                         rs.getString("ciudadPropietario"),
                         rs.getString("barrioPropietario"),
                         rs.getString("marcaCelular"),
                         rs.getString("modeloCelular"),
-                        rs.getString("numeroCelular"),
+                        rs.getString("numeroCelular"));
+                
+                PlanPostPagoMinutos pm3 = new PlanPostPagoMinutos(
+                        p,
                         rs.getDouble("minutosNacionales"),
                         rs.getDouble("costoMinutosNacionales"),
                         rs.getDouble("minutosInternacional"),
@@ -274,15 +281,18 @@ public class Enlace {
 
             ResultSet rs = statement.executeQuery(data);
             while (rs.next()) {
-                PlanPostPagoMegas pm3 = new PlanPostPagoMegas(
-                        rs.getString("nombrePropietario"),
+                
+                Propietario p = new Propietario(rs.getString("nombrePropietario"),
                         rs.getString("apellidoPropietario"),
                         rs.getString("pasaportePropietario"),
                         rs.getString("ciudadPropietario"),
                         rs.getString("barrioPropietario"),
                         rs.getString("marcaCelular"),
                         rs.getString("modeloCelular"),
-                        rs.getString("numeroCelular"),
+                        rs.getString("numeroCelular"));
+                
+                PlanPostPagoMegas pm3 = new PlanPostPagoMegas(
+                        p,
                         rs.getDouble("gigasInternet"),
                         rs.getDouble("costoGigasInternet"),
                         rs.getDouble("tarifaBase"));
@@ -314,15 +324,17 @@ public class Enlace {
             ResultSet rs = statement.executeQuery(data);
             while (rs.next()) {
                 
-                PlanPostPagoMinutosMegas pm3 = new PlanPostPagoMinutosMegas(
-                        rs.getString("nombrePropietario"),
+                Propietario p = new Propietario(rs.getString("nombrePropietario"),
                         rs.getString("apellidoPropietario"),
                         rs.getString("pasaportePropietario"),
                         rs.getString("ciudadPropietario"),
                         rs.getString("barrioPropietario"),
                         rs.getString("marcaCelular"),
                         rs.getString("modeloCelular"),
-                        rs.getString("numeroCelular"),
+                        rs.getString("numeroCelular"));
+                
+                PlanPostPagoMinutosMegas pm3 = new PlanPostPagoMinutosMegas(
+                        p,
                         rs.getDouble("minutosSaldo"),
                         rs.getDouble("costoMinutosSaldo"),
                         rs.getDouble("gigasInternet"),

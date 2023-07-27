@@ -2,23 +2,26 @@ package paquete3;
 
 public class PlanPostPagoMegas extends PlanCelular {
 
+    private Propietario propietario;
     private double gigasInternet;
     private double costoGigasInternet;
     private double tarifaBase;
 
-    public PlanPostPagoMegas(String nombrePropietario, String apellidoPropietario,
-            String pasaportePropietario, String ciudadPropietario,
-            String barrioPropietario, String marcaCelular,
-            String modeloCelular, String numeroCelular,
-            double megasInterG, double costoGigasInter, double tarifaB) {
+    public PlanPostPagoMegas(Propietario p, double megasInterG,
+            double costoGigasInter, double tarifaB) {
 
-        super(nombrePropietario, apellidoPropietario, pasaportePropietario,
-                ciudadPropietario, barrioPropietario, marcaCelular,
-                modeloCelular, numeroCelular);
-
+        propietario = p;
         gigasInternet = megasInterG;
         costoGigasInternet = costoGigasInter;
         tarifaBase = tarifaB;
+    }
+
+    public Propietario obtenerPropietario() {
+        return propietario;
+    }
+
+    public void establecerPropietario(Propietario c) {
+        propietario = c;
     }
 
     public double obtenerGigasInternet() {
@@ -57,10 +60,10 @@ public class PlanPostPagoMegas extends PlanCelular {
                 + "Costo por giga: %.2f\n"
                 + "Tarifa base: %.2f\n"
                 + "Pago mensual: %.2f\n",
-                super.toString(), 
-                gigasInternet, 
-                costoGigasInternet, 
-                tarifaBase, 
+                super.toString(),
+                gigasInternet,
+                costoGigasInternet,
+                tarifaBase,
                 pagoMensual);
         return reporte;
     }
