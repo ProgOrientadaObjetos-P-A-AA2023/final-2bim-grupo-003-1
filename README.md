@@ -1,5 +1,11 @@
 # Trabajo Final Segundo Bimestre
 
+* Integrantes
+
+* Jhordy Anthony Agila Saraguro
+
+* Kelvin Sneider Sarango Chalan
+
 * El siguiente trabajo se lo realizará de forma grupal (grupos de máximo dos personas).
 
 ## Tema:
